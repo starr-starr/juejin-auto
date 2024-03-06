@@ -7,14 +7,14 @@ const config = {
 }
 
 const signIn = async () => {
-    const res = await axios.post(url.sign_in, {
-        'aid': config['aid'],
-        'uuid': config['uuid']
-    }, {
-        headers: {
-            'Cookie': config['cookie'],
+    const res = await axios.post(
+        url.sign_in, 
+        {
+           headers: {
+               'Cookie': config['cookie'],
         }
-    })
+    }
+)
     if (res && res.data) {
         if (res.data.err_no == 0) {
             console.log(`掘金签到结果,获得': ${res.data.data.incr_point} 矿石`)
