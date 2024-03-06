@@ -1,1 +1,1 @@
-# juejin-auto
+在 Repository secrets 配置自己的 COOKIE 即可(大写)
