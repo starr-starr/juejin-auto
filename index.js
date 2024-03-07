@@ -7,8 +7,9 @@ const config = {
 }
 
 const signIn = async () => {
-    const res = await axios.post(
+    const res = await axios.post(   
         url.sign_in, 
+        {},
         {
            headers: {
                'Cookie': config['cookie'],
@@ -17,7 +18,7 @@ const signIn = async () => {
 )
     if (res && res.data) {
         if (res.data.err_no == 0) {
-            console.log(`掘金签到结果,获得': ${res.data.data.incr_point} 矿石`)
+            console.log(`掘金签到结果,获得: ${res.data.data.incr_point} 矿石`)
             setTimeout(() => {
                 lotteryFreeCheck();
               }, Math.random() * 5 * 1000)
@@ -29,7 +30,7 @@ const signIn = async () => {
 
 const lotteryFreeCheck = async () => {
     const res = await axios.get(
-        url.freeCheck,
+        url.free_count,
         {
             headers: {
                 'Cookie': config['cookie'],
@@ -46,6 +47,7 @@ const lotteryFreeCheck = async () => {
 const lotteryDraw = async () => {
     const res = await axios.post(
         url.lottery,
+        {},
         {
             headers: {
                 'Cookie': config['cookie'],
