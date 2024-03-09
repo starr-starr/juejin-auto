@@ -1,6 +1,6 @@
 const crypto = require('crypto')
 
-export function getSign(timestamp,secret,algorithm){
+function getSign(timestamp,secret,algorithm){
     // timestamp + "\n" + 密钥
     const msg = `${timestamp}\n${secret}`
     const actual = crypto
@@ -9,4 +9,4 @@ export function getSign(timestamp,secret,algorithm){
     const sign = Buffer.from(actual, 'utf-8').toString('base64');
     return sign
 }
-
+module.exports = getSign

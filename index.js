@@ -1,7 +1,7 @@
 const axios = require('axios')
 
-const { url,Cookie} = require('./config/index.js')
-const { pushMsg } = require('./src/pushMsg.js')
+const { url,Cookie } = require('./config/index.js')
+const pushMsg  = require('./src/pushMsg.js')
 
 const signIn = async () => {
     const res = await axios.post(   
@@ -22,7 +22,7 @@ const signIn = async () => {
               }, Math.random() * 5 * 1000)
         } else {
             console.log(`掘金签到结果`, { '签到失败': res.data });
-            pushMsg(`掘金签到结果`, { '签到失败': res.data });
+            pushMsg(`掘金签到结果:${res.data.err_msg }`);
         }
     }
 }
@@ -58,7 +58,7 @@ const lotteryDraw = async () => {
         pushMsg(`抽奖成功，获得：${res.data.data.lottery_name}`)
     } else {
         console.log(res);
-        console.log(`抽奖失败 `);
+        console.log(`抽奖失败`);
         pushMsg(`抽奖失败 `)
     }
 }
