@@ -1,1 +1,2 @@
-在 Repository secrets 配置自己的 COOKIE 即可(大写)
+- 在 Repository secrets 配置自己的 COOKIE，FEISHU_ROBOT，SECRET 即可(大写)
+- 同文 https://juejin.cn/post/7344259970521677864
