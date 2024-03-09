@@ -5,6 +5,6 @@ module.exports = {
         lottery:"https://api.juejin.cn/growth_api/v1/lottery/draw",
         feishu_Robot:process.env.FEISHU_ROBOT,
     },
-    cookie: process.env.COOKIE,
+    Cookie: process.env.COOKIE,
     secret: process.env.SECRET,
 }
