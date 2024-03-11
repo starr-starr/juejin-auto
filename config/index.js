@@ -6,5 +6,5 @@ module.exports = {
         feishu_Robot:process.env.FEISHU_ROBOT,
     },
     Cookie: process.env.COOKIE,
-    secret: process.env.SECRET,
+    secret: 'DRg0rFVjiAVRuhsYTDddRb',
 }
