@@ -29,3 +29,5 @@ jobs:
     - run: node index.js
     env:
         COOKIE: ${{ secrets.COOKIE }}
+        FEISHU_ROBOT: ${{ secrets.FEISHU_ROBOT }}
+        SECRET: ${{ secrets.SECRET }}
