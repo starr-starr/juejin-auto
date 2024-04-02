@@ -2,6 +2,7 @@ const axios = require('axios')
 
 const { url,Cookie } = require('./config/index.js')
 const pushMsg  = require('./src/pushMsg.js')
+const savePraise  = require('./src/opraterPraise.js')
 
 const signIn = async () => {
     const res = await axios.post(   
@@ -56,11 +57,13 @@ const lotteryDraw = async () => {
     if (res && res.data) {
         console.log(`抽奖成功，获得：${res.data.data.lottery_name}`);
         pushMsg(`抽奖成功，获得：${res.data.data.lottery_name}`)
+        savePraise(); 
     } else {
         console.log(res);
         console.log(`抽奖失败`);
         pushMsg(`抽奖失败 `)
     }
 }
-
 signIn();
+  
+
